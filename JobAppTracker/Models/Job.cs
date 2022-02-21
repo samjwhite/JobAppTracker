@@ -16,6 +16,11 @@ namespace JobAppTracker.Models
         [StringLength(60, ErrorMessage = "Title cannot be more than 60 characters long.")]
         public string Title { get; set; }
 
+        [Display(Name = "Job Type")]
+        [Required(ErrorMessage = "You must select a Job Type")]
+        public int JobTypeID { get; set; }
+        public JobType JobType { get; set; }
+
         [Display(Name = "Salary")]
         public decimal? Salary { get; set; }
         [Display(Name = "Hourly Rate")]
@@ -28,6 +33,12 @@ namespace JobAppTracker.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? DateDue { get; set; }
+
+        [Display(Name = "Status")]
+        [Required(ErrorMessage = "You must select a Job Status")]
+        public int StatusID { get; set; }
+        public Status Status { get; set; }
+
 
         [Display(Name = "Description")]
         [StringLength(2000, ErrorMessage = "Only 5000 characters for description.")]
@@ -47,6 +58,11 @@ namespace JobAppTracker.Models
         [Display(Name = "Location")]
         [StringLength(60, ErrorMessage = "Location cannot be more than 30 characters long.")]
         public string Location { get; set; }
+
+        [Display(Name = "Employer Info")]
+        public int? EmployerID { get; set; }
+
+        public Employer Employer { get; set; }
 
 
     }

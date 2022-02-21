@@ -12,6 +12,7 @@ namespace JobAppTracker.Models
         {
             Jobs = new HashSet<Job>();
         }
+        //FIELDS
         public int ID { get; set; }
         [Display(Name = "Type")]
         [StringLength(20, ErrorMessage = "Job Type can't be longer than 20 symbols")]

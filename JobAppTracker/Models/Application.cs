@@ -9,6 +9,17 @@ namespace JobAppTracker.Models
 {
     public class Application : Auditable
     {
+
+        public Application()
+        {
+            JobTypes = new HashSet<JobType>();
+            
+        }
+        /// <summary>
+        /// TODO
+        /// Select from existing Employers or add Employer on the fly. 
+        /// Offer to skip Employer selection/creation (can be updated from Details screen)
+        /// </summary>
         public int ID { get; set; }
 
         [Display(Name = "Title")]
@@ -17,9 +28,7 @@ namespace JobAppTracker.Models
         public string Title { get; set; }
 
         [Display(Name = "Job Type")]
-        [Required(ErrorMessage = "You must select a Job Type")]
-        public int JobTypeID { get; set; }
-        public JobType JobType { get; set; }
+        public ICollection<JobType> JobTypes { get; set; }
 
         [Display(Name = "Salary")]
         public decimal? Salary { get; set; }

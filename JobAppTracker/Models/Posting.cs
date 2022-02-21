@@ -8,6 +8,11 @@ namespace JobAppTracker.Models
 {
     public class Posting
     {
+        public Posting()
+        {
+            PostingTypes = new HashSet<PostingType>();
+
+        }
         //TODO
         //Posting can be transformed into Application 
         //Use Fields to prepopulate Application
@@ -21,9 +26,9 @@ namespace JobAppTracker.Models
         public decimal? Salary { get; set; }
         [Display(Name = "Hourly Rate")]
         public decimal? HourlyRate { get; set; }
-        [Display(Name = "Job Type")]
-        [Required(ErrorMessage = "You must select a Job Type")]
-        public int JobTypeID { get; set; }
+
+        [Display(Name = "Posting Type")]
+        public ICollection<PostingType> PostingTypes { get; set; }
         public JobType JobType { get; set; }
         [Display(Name = "URL")]
         [Url]

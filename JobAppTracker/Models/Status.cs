@@ -10,12 +10,12 @@ namespace JobAppTracker.Models
     {
         public Status()
         {
-            Jobs = new HashSet<Job>();
+            Applications = new HashSet<Application>();
         }
         public int ID { get; set; }
         [Display(Name = "Job Status")]
         [StringLength(20, ErrorMessage = "Job Status can't be longer than 20 symbols")]
         public string Name { get; set; }
-        public ICollection<Job> Jobs { get; set; }
+        public ICollection<Application> Applications { get; set; }
     }
 }

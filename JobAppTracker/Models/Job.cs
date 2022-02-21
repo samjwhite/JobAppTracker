@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JobAppTracker.Models
 {
-    public class Job : Auditable
+    public class Application : Auditable
     {
         public int ID { get; set; }
 

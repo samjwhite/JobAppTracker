@@ -12,18 +12,18 @@ namespace JobAppTracker.Models
         //CONSTRUCTOR
         public Employer()
         {
-            Jobs = new HashSet<Job>();     
+            Applications = new HashSet<Application>();     
         }
 
         //PROPERTIES
-        [Display(Name = "Number of Jobs")]
+        [Display(Name = "Number of Applications")]
         public int NumberOfJObs
         {
             get
             {
                 int count = 0;
 
-                foreach (Job j in Jobs) count++;
+                foreach (Application a in Applications) count++;
 
                 return count;
             }
@@ -85,6 +85,6 @@ namespace JobAppTracker.Models
 
 
 
-        public ICollection<Job> Jobs { get; set; }
+        public ICollection<Application> Applications { get; set; }
     }
 }
